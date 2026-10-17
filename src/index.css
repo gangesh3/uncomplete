@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Café page CSS variable theme system */
+.cafe-page {
+  background-color: var(--cafe-bg, #FAF5F0);
+  color: var(--cafe-text, #2D1B0E);
+  font-family: var(--cafe-font, var(--font-sans));
+  min-height: 100vh;
+}
+
+.cafe-surface {
+  background-color: var(--cafe-surface, #FFFFFF);
+  border-color: var(--cafe-border, #E5D9C9);
+}
+
+.cafe-surface-alt {
+  background-color: var(--cafe-surface-alt, #F5EDE3);
+}
+
+.cafe-text-muted {
+  color: var(--cafe-text-muted, #7A6A5A);
+}
+
+.cafe-border {
+  border-color: var(--cafe-border, #E5D9C9);
+}
+
+.cafe-primary-bg {
+  background-color: var(--cafe-primary, #6B4423);
+}
+
+.cafe-primary-text {
+  color: var(--cafe-primary, #6B4423);
+}
+
+.cafe-accent-bg {
+  background-color: var(--cafe-accent, #D4A574);
+}
+
+.cafe-accent-text {
+  color: var(--cafe-accent, #D4A574);
+}
+
+.cafe-primary-btn {
+  background-color: var(--cafe-primary, #6B4423);
+  color: var(--cafe-text-on-primary, #FFFFFF);
+  transition: all 0.2s ease;
+}
+
+.cafe-primary-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cafe-primary-btn:active {
+  transform: translateY(0);
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out both;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 1.5s ease-in-out infinite;
+}
+
+/* Star rating input */
+.star-input {
+  transition: transform 0.1s ease, color 0.15s ease;
+  cursor: pointer;
+}
+
+.star-input:hover {
+  transform: scale(1.2);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--cafe-primary, #6B4423);
+  outline-offset: 2px;
+}
